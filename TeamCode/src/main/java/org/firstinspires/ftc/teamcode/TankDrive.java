@@ -74,7 +74,9 @@ public class TankDrive extends OpMode
         drivetrain.tankDrive(gamepad1);
 
         // Show the elapsed game time.
-        telemetry.addData("Status", "Run Time: " + runtime.toString());
+        if (RobotMap.DISPLAY_TIME) {
+            telemetry.addData("Status", "Run Time: " + runtime.toString());
+        }
     }
 
     /*

@@ -41,8 +41,8 @@ public class DriveTrain {
     public void tankDrive(Gamepad gamepad) {
 
         // Get joystick values from gamepad
-        double leftPower  = gamepad.left_stick_y ;
-        double rightPower = gamepad.right_stick_y ;
+        double leftPower  = gamepad.left_stick_y;
+        double rightPower = gamepad.right_stick_y;
 
         // Reverse joystick values if requested
         if (RobotMap.REVERSE_JOYSTICKS) {
@@ -50,6 +50,10 @@ public class DriveTrain {
             rightPower *= -1.0;
         }
 
+        setPower(leftPower, rightPower);
+    }
+
+    private void setPower(double leftPower, double rightPower){
         // Make sure power levels are within expected range
         leftPower = safetyCheck(leftPower);
         rightPower = safetyCheck(rightPower);
@@ -59,7 +63,10 @@ public class DriveTrain {
         rightMotor.setPower(rightPower);
 
         //Display power levels for operator
-        telemetry.addData("Motors", "left (%.2f), right (%.2f)", leftPower, rightPower);
+        if (RobotMap.DISPLAY_MOTOR_VALUES) {
+            telemetry.addData("Motors", "left (%.2f), right (%.2f)",
+                    leftPower, rightPower);
+        }
     }
 
     private double safetyCheck(double inp) {
