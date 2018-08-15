@@ -38,17 +38,18 @@ import com.qualcomm.robotcore.util.ElapsedTime;
  * Basic code for a simple robot. Testing for Team 14561
  */
 
-@TeleOp(name="Basic: Iterative OpMode", group="Iterative Opmode")
+@TeleOp(name="TankDrive", group="Iterative Opmode")
 public class TankDrive extends OpMode
 {
     private ElapsedTime runtime = new ElapsedTime();
-    private DriveTrain drivetrain = new DriveTrain(hardwareMap, telemetry);
+    private DriveTrain drivetrain;
 
     /*
      * Code to run ONCE when the driver hits INIT
      */
     @Override
     public void init() {
+        drivetrain = new DriveTrain(hardwareMap, telemetry);
     }
 
     /*

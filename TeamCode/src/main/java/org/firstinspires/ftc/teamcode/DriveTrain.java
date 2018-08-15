@@ -44,6 +44,10 @@ public class DriveTrain {
         double leftPower  = gamepad.left_stick_y;
         double rightPower = gamepad.right_stick_y;
 
+        // Limit speed of drivetrain
+        leftPower *= RobotMap.SPEEDLIMIT;
+        rightPower *= RobotMap.SPEEDLIMIT;
+
         // Reverse joystick values if requested
         if (RobotMap.REVERSE_JOYSTICKS) {
             leftPower *= -1.0;
