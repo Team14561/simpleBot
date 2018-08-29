@@ -29,7 +29,6 @@
 
 package org.firstinspires.ftc.teamcode;
 
-import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.util.ElapsedTime;
@@ -38,7 +37,7 @@ import com.qualcomm.robotcore.util.ElapsedTime;
  * Basic code for a simple robot. Testing for Team 14561
  */
 
-@TeleOp(name="TankDrive", group="Iterative Opmode")
+@TeleOp(name="TankDrive", group="SimpleBot")
 public class TankDrive extends OpMode
 {
     private ElapsedTime runtime = new ElapsedTime();
